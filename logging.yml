@@ -1,0 +1,4 @@
+logging:
+  log_opt:
+    max-size: "200k"
+    max-file: "3"

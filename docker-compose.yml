@@ -1,0 +1,34 @@
+rabbitmq:
+  image: rabbitmq:management
+  extends:
+    file: logging.yml
+    service: logging
+  ports:
+    - "5672:5672"
+    - "15672:15672"
+mysql:
+  image: mysql
+  extends:
+    file: logging.yml
+    service: logging
+  environment:
+    MYSQL_ROOT_PASSWORD: Passw0rd
+  ports:
+    - "3306:3306"
+  volumes:
+    - ./cirrus/mysql/docker-entrypoint-initdb.d:/docker-entrypoint-initdb.d
+#    - ./cirrus/mysql/data:/var/lib/mysql #mount data directory for no-create container
+    
+redis:
+  image: bitnami/redis:latest
+  extends:
+    file: logging.yml
+    service: logging
+  environment:
+    - ALLOW_EMPTY_PASSWORD=yes
+  ports:
+    - "6379:6379"
+    - "16379:16379"
+  volumes:
+    - ./cirrus/redis/data:/bitnami/redis/data
+  command: redis-server --appendonly yes
