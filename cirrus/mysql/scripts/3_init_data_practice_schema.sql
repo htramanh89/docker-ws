@@ -1,16 +1,16 @@
-INSERT INTO AUTHOR(USERNAME, PASSWORD, ACTIVE) 
-    VALUES('author1', 'author1', true);
-INSERT INTO AUTHOR(USERNAME, PASSWORD, ACTIVE) 
-    VALUES('author2', 'author2', true);
-INSERT INTO AUTHOR(USERNAME, PASSWORD, ACTIVE) 
-    VALUES('author3', 'author3', false);
+insert into author(username, password, active) 
+    values('author1', 'author1', true);
+insert into author(username, password, active) 
+    values('author2', 'author2', true);
+insert into author(username, password, active) 
+    values('author3', 'author3', false);
 	
 
-INSERT INTO MESSAGE(AUTHOR_ID, CONTENT) VALUES (1, 'msg 1');
-INSERT INTO MESSAGE(AUTHOR_ID, CONTENT) VALUES (2, 'msg 1');
-INSERT INTO MESSAGE(AUTHOR_ID, CONTENT) VALUES (3, 'msg 1');
-INSERT INTO MESSAGE(AUTHOR_ID, CONTENT) VALUES (1, 'msg 2');
-INSERT INTO MESSAGE(AUTHOR_ID, CONTENT) VALUES (2, 'msg 2');
-INSERT INTO MESSAGE(AUTHOR_ID, CONTENT) VALUES (3, 'msg 2');
-INSERT INTO MESSAGE(AUTHOR_ID, CONTENT) VALUES (1, 'msg 3');
-INSERT INTO MESSAGE(AUTHOR_ID, CONTENT) VALUES (1, 'msg 4');
+insert into message(author_id, content) values (1, 'msg 1');
+insert into message(author_id, content) values (2, 'msg 1');
+insert into message(author_id, content) values (3, 'msg 1');
+insert into message(author_id, content) values (1, 'msg 2');
+insert into message(author_id, content) values (2, 'msg 2');
+insert into message(author_id, content) values (3, 'msg 2');
+insert into message(author_id, content) values (1, 'msg 3');
+insert into message(author_id, content) values (1, 'msg 4');

@@ -1,14 +1,14 @@
-CREATE TABLE AUTHOR (
-    ID INT(10) NOT NULL AUTO_INCREMENT,
-    USERNAME VARCHAR(64) NOT NULL,
-    PASSWORD VARCHAR(64) NOT NULL,
-    ACTIVE BOOLEAN,
-    CONSTRAINT USERS_PK PRIMARY KEY (ID));
+create table author (
+    id int(10) not null auto_increment,
+    username varchar(64) not null,
+    password varchar(64) not null,
+    active boolean,
+    constraint users_pk primary key (id));
 
-CREATE TABLE MESSAGE (
-    ID INT(10) NOT NULL AUTO_INCREMENT,
-    AUTHOR_ID INT,
-	CONTENT VARCHAR(64),
-    CREATED_AT TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    CONSTRAINT MESSAGE_PK PRIMARY KEY (ID),
-    CONSTRAINT MESSAGE_AUTHOR_FK FOREIGN KEY (AUTHOR_ID) REFERENCES AUTHOR(ID));
+create table message (
+    id int(10) not null auto_increment,
+    author_id int,
+	content varchar(64),
+    created_at timestamp default current_timestamp,
+    constraint message_pk primary key (id),
+    constraint message_author_fk foreign key (author_id) references author(id));
