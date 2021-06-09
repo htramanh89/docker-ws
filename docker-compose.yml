@@ -20,7 +20,7 @@ mysql:
 #    - ./cirrus/mysql/data:/var/lib/mysql #mount data directory for no-create container
     
 redis:
-  image: bitnami/redis:latest
+  image: redis:latest
   extends:
     file: logging.yml
     service: logging
@@ -29,6 +29,4 @@ redis:
   ports:
     - "6379:6379"
     - "16379:16379"
-  volumes:
-    - ./cirrus/redis/data:/bitnami/redis/data
   command: redis-server --appendonly yes
